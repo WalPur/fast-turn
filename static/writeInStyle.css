@@ -1,0 +1,8 @@
+article{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+form{
+	margin-bottom: 3em;
+}
