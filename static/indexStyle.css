@@ -1,0 +1,39 @@
+#logo{
+	width: 40%;
+}
+#menu{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	margin-bottom: 5em;
+}
+.ButtonA{
+	font-size: 1.5em;
+	width: 30%;
+	background-color: white;
+	border: 2px solid black;
+	border-radius: 30px;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: black;
+}
+h1, h2{
+	text-align: center;
+	margin: 0;
+}
+#textH{
+	margin-top: 5em;
+	margin-bottom: 3em;
+}
+img{
+	width: 25%;
+}
+@media (max-width: 768px){
+	.ButtonA{
+		width: 100%;
+	}
+	#menu{
+		flex-wrap: wrap;
+	}
+}
