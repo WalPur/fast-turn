@@ -1,0 +1,49 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+		<link rel="stylesheet" href="{% static "Style.css" %}">
+	</head>
+	<body>
+		<nav>
+			<div id="navwrap">
+				<a class="navA" href="/">Главная</a>
+				<a href="lk" class="navA">Личный кабинет {{ user.get_username }}</a>
+				<a class="navA" href="about" id="act">О нас</a>
+			</div>
+		</nav>
+		<div id="wrapper">
+			<article style="font-size: 1.4em">
+				Мы команда YuTuMi, создали проект FastTurn, который позволяет предприятиям организовывать очередь.
+				Наш состав:
+				<ul style="margin: 0;margin-bottom: 3em">
+					<li>Менеджер: Тускул</li>
+					<li>Дизайнер: Юля</li>
+					<li>Программист: Миша</li>
+				</ul>
+			</article>
+		</div>
+		<footer>
+			<div id="navwrap">
+				&copy 2020 YuTuMi
+				<div id="contacs">
+					<div class="cont">
+						<img src="{% static "images/phone.png" %}" class="Fimg">
+						+79969159834
+					</div>
+					<div class="cont">
+						<img src="{% static "images/insta.png" %}" class="Fimg">
+						@tuskulll
+					</div>
+					<div class="cont">
+						<img src="{% static "images/email.png" %}" class="Fimg">
+						filippovtuskul@gmail.com
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

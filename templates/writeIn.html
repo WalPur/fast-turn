@@ -1,0 +1,49 @@
+{% load staticfiles%}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+		<link rel="stylesheet" href="{% static "Style.css" %}">
+		<link rel="stylesheet" href="{% static "writeInStyle.css" %}">
+	</head>
+	<body>
+		<nav>
+			<div id="navwrap">
+				<a class="navA" href="/">Главная</a>
+				<a href="lk" class="navA">Личный кабинет {{ user.get_username }}</a>
+				<a class="navA" href="about">О нас</a>
+			</div>
+		</nav>
+		<div id="wrapper">
+			<article>
+				<h3>Введите ID очереди:</h3>
+				<form id="inputFields" method="POST">
+					{% csrf_token %}
+					<input type="text" name="id">
+					<input type="submit" value="Ввести">
+				</form>
+			</article>
+		</div>
+		<footer>
+			<div id="navwrap">
+				&copy 2020 YuTuMi
+				<div id="contacs">
+					<div class="cont">
+						<img src="{% static "images/phone.png" %}" class="Fimg">
+						+79969159834
+					</div>
+					<div class="cont">
+						<img src="{% static "images/insta.png" %}" class="Fimg">
+						@tuskulll
+					</div>
+					<div class="cont">
+						<img src="{% static "images/email.png" %}" class="Fimg">
+						filippovtuskul@gmail.com
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

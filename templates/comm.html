@@ -1,0 +1,78 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+		<link rel="stylesheet" href="{% static "Style.css" %}">
+	</head>
+	<body>
+		<nav>
+			<div id="navwrap">
+				<a class="navA" href="/" id="act">Главная</a>
+				<a href="lk" class="navA">Личный кабинет {{ user.get_username }}</a>
+				<a class="navA" href="about">О нас</a>
+			</div>
+		</nav>
+		<div id="wrapper">
+			<article>
+				{% if user.is_authenticated %}
+					<form method="POST">
+						{% csrf_token %}
+						<textarea name="text" cols="30" rows="10"></textarea>
+						<input type="submit" value="Записать">
+					</form>
+				{% endif %}
+				<div id="comments">
+					{% for comment in comments %}
+						<h3>{{ comment.author }}</h3>
+						<p>{{ comment.text }}</p>
+						<hr>
+					{% endfor %}
+				</div>
+				<!--
+				<div id="textH">
+					<h1>FastTurn</h1>
+					<h2>Решение для предприятий организации очереди</h2>
+				</div>
+				<img src="{% static "images/LOGOTYPE.png" %}" id="logo" alt="">
+				{% if type == '1' %}
+					<a href="logout">Вы предприниматель</a>
+				{% elif type == '2' %}
+					<a href="logout">Вы клиент</a>
+				{% endif %}
+				<div id="menu">
+					<a href="create" class="ButtonA">
+						<img src="{% static "images/Queue.png" %}" alt="">
+						Создать очередь
+					</a>
+					<a href="writeIn" class="ButtonA">
+						<img src="{% static "images/Queue.png" %}" alt="">
+						Записаться в очередь
+					</a>
+				</div>
+				-->
+			</article>
+		</div>
+		<footer>
+			<div id="navwrap">
+				&copy 2020 YuTuMi
+				<div id="contacs">
+					<div class="cont">
+						<img src="{% static "images/phone.png" %}" class="Fimg">
+						+79969159834
+					</div>
+					<div class="cont">
+						<img src="{% static "images/insta.png" %}" class="Fimg">
+						@tuskulll
+					</div>
+					<div class="cont">
+						<img src="{% static "images/email.png" %}" class="Fimg">
+						filippovtuskul@gmail.com
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
