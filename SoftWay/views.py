@@ -80,7 +80,7 @@ def create(request):
 		data.creator = request.user.get_username()
 		data.people = ""
 		data.description = request.POST.get('description')
-		data.last = str(data.openTime) + ':' +str(60 - int(data.period))
+		data.last = str(data.openTime) + ':' + '00'
 		data.save()
 		pUpdate = people.objects.get(user_id=request.user.id)
 		pUpdate.queues += str(data.id) + "#"
@@ -104,11 +104,13 @@ def writeIn(request):
 			WriteInId = queue.objects.get(id=idnum)
 			WriteInId.people += request.user.get_username() + "#"
 			time = WriteInId.last
+			print(time)
 			Minutes = int(time[len(time) - 2] + time[len(time) - 1])
 			if time[2] == ':':
 				hours = int(time[0] + time[1])
 			else:
 				hours = int(time[0])
+			print(hours, Minutes)
 			Minutes += WriteInId.period
 			if Minutes >= 60:
 				Minutes = Minutes % 60
@@ -126,7 +128,8 @@ def writeIn(request):
 				Minutes = '00'
 			time = str(hours) + ":" + Minutes
 			WriteInId.last = time
-			WriteInId.save(update_fields=["people", 'last'])
+			WriteInId.time += time + "#"
+			WriteInId.save(update_fields=["people", 'last', 'time'])
 			pUpdate = people.objects.get(user_id=request.user.id)
 			pUpdate.queues += str(idnum) + "#"
 			pUpdate.time += time + "#"
