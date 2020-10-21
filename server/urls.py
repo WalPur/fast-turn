@@ -30,5 +30,5 @@ urlpatterns = [
     path('about', views.about),
     path('lgout', views.logout),
     path('comm', views.test),
-    url(r'^favicon\.ico$', RedirectView.as_view(url='/static/img/favicon.ico', permanent=True)),
+    # url(r'^favicon\.ico$', RedirectView.as_view(url='/static/img/favicon.ico', permanent=True)),
 ]
