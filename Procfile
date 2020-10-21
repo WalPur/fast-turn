@@ -1,1 +1,1 @@
-web: gunicorn teatrWebSite.wsgi
+web: gunicorn server.wsgi
