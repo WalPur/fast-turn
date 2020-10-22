@@ -70,6 +70,7 @@ footer{
 		width: 100%;
 		margin: 0;
 		align-items: center;
+		padding-left: 0;
 	}
 	#test{
 		justify-content: center;
