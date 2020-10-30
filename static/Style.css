@@ -52,6 +52,7 @@ footer{
 	align-items: center;
 	padding-top: 1.5em;
 	padding-bottom: 1.5em;
+	min-height: 70px
 }
 #contacs{
 	display: flex;
